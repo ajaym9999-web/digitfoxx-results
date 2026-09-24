@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "uk49s-lunchtime",
+    "name": "UK49s Lunchtime",
+    "numbers": [
+      7,
+      14,
+      22,
+      31,
+      38,
+      45
+    ],
+    "bonus": 9,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T16:23:07.951645Z",
+    "live": false
+  },
+  {
+    "slug": "uk49s-teatime",
+    "name": "UK49s Teatime",
+    "numbers": [
+      3,
+      11,
+      19,
+      27,
+      34,
+      49
+    ],
+    "bonus": 5,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T16:23:07.951653Z",
+    "live": false
+  },
+  {
+    "slug": "uk49s-brunchtime",
+    "name": "UK49s Brunchtime",
+    "numbers": [
+      5,
+      16,
+      23,
+      29,
+      42,
+      48
+    ],
+    "bonus": 12,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T16:23:07.951657Z",
+    "live": false
+  },
+  {
+    "slug": "uk49s-drivetime",
+    "name": "UK49s Drivetime",
+    "numbers": [
+      2,
+      13,
+      26,
+      33,
+      40,
+      47
+    ],
+    "bonus": 7,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T16:23:07.951661Z",
+    "live": false
+  }
+]
