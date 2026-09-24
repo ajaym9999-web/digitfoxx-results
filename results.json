@@ -1,0 +1,253 @@
+[
+  {
+    "slug": "uk49s-lunchtime",
+    "name": "UK49s Lunchtime",
+    "numbers": [
+      14,
+      21,
+      25,
+      26,
+      46,
+      47
+    ],
+    "bonus": 49,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [
+      {
+        "no": 2481,
+        "date": "2026-09-24",
+        "dateLong": "24 September 2026",
+        "numbers": [
+          14,
+          21,
+          25,
+          26,
+          46,
+          47
+        ],
+        "bonus": 49
+      }
+    ],
+    "updatedAt": "2026-09-24T18:11:00.076197Z",
+    "live": true
+  },
+  {
+    "slug": "uk49s-teatime",
+    "name": "UK49s Teatime",
+    "numbers": [
+      2,
+      7,
+      13,
+      23,
+      27,
+      34
+    ],
+    "bonus": 40,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [
+      {
+        "no": 2481,
+        "date": "2026-09-24",
+        "dateLong": "24 September 2026",
+        "numbers": [
+          2,
+          7,
+          13,
+          23,
+          27,
+          34
+        ],
+        "bonus": 40
+      }
+    ],
+    "updatedAt": "2026-09-24T18:11:00.076204Z",
+    "live": true
+  },
+  {
+    "slug": "uk49s-brunchtime",
+    "name": "UK49s Brunchtime",
+    "numbers": [
+      1,
+      2,
+      8,
+      9,
+      16,
+      26
+    ],
+    "bonus": 20,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [
+      {
+        "no": 2481,
+        "date": "2026-09-24",
+        "dateLong": "24 September 2026",
+        "numbers": [
+          1,
+          2,
+          8,
+          9,
+          16,
+          26
+        ],
+        "bonus": 20
+      }
+    ],
+    "updatedAt": "2026-09-24T18:11:00.076207Z",
+    "live": true
+  },
+  {
+    "slug": "uk49s-drivetime",
+    "name": "UK49s Drivetime",
+    "numbers": [
+      20,
+      32,
+      36,
+      45,
+      47,
+      49
+    ],
+    "bonus": 9,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [
+      {
+        "no": 2481,
+        "date": "2026-09-24",
+        "dateLong": "24 September 2026",
+        "numbers": [
+          20,
+          32,
+          36,
+          45,
+          47,
+          49
+        ],
+        "bonus": 9
+      }
+    ],
+    "updatedAt": "2026-09-24T18:11:00.076210Z",
+    "live": true
+  },
+  {
+    "slug": "sa-daily-lotto",
+    "name": "Sa Daily Lotto",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076213Z",
+    "live": false
+  },
+  {
+    "slug": "sa-lotto",
+    "name": "Sa Lotto",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076215Z",
+    "live": false
+  },
+  {
+    "slug": "sa-lotto-plus-1",
+    "name": "Sa Lotto Plus 1",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076217Z",
+    "live": false
+  },
+  {
+    "slug": "sa-lotto-plus-2",
+    "name": "Sa Lotto Plus 2",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076218Z",
+    "live": false
+  },
+  {
+    "slug": "sa-powerball",
+    "name": "Sa Powerball",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076220Z",
+    "live": false
+  },
+  {
+    "slug": "sa-powerball-plus",
+    "name": "Sa Powerball Plus",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076222Z",
+    "live": false
+  },
+  {
+    "slug": "sa-pick-3",
+    "name": "Sa Pick 3",
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bonus": 0,
+    "date": "2026-09-24",
+    "dateLong": "24 September 2026",
+    "history": [],
+    "updatedAt": "2026-09-24T18:11:00.076223Z",
+    "live": false
+  }
+]
