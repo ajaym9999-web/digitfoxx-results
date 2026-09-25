@@ -43,8 +43,8 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-09-25T16:15:00.000000Z",
-    "live": true
+    "updatedAt": "2026-09-25T16:52:08.801041Z",
+    "live": false
   },
   {
     "slug": "uk49s-teatime",
@@ -90,8 +90,8 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-09-25T16:15:00.000000Z",
-    "live": true
+    "updatedAt": "2026-09-25T16:52:29.107373Z",
+    "live": false
   },
   {
     "slug": "uk49s-brunchtime",
@@ -137,8 +137,8 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-09-25T16:15:00.000000Z",
-    "live": true
+    "updatedAt": "2026-09-25T16:52:49.319118Z",
+    "live": false
   },
   {
     "slug": "uk49s-drivetime",
@@ -184,8 +184,8 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-09-25T16:15:00.000000Z",
-    "live": true
+    "updatedAt": "2026-09-25T16:53:09.654401Z",
+    "live": false
   },
   {
     "slug": "sa-daily-lotto",
