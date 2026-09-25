@@ -1,0 +1,36 @@
+name: Daily UK49s Results Update - DigitFoxx.com
+
+on:
+  schedule:
+    - cron: '05 11 * * *'  # Brunchtime 10:49 AM UK = 09:49 UTC
+    - cron: '15 13 * * *'  # Lunchtime 12:49 PM UK = 11:49 UTC
+    - cron: '15 16 * * *'  # Drivetime 3:49 PM UK = 14:49 UTC
+    - cron: '15 18 * * *'  # Teatime 5:49 PM UK = 16:49 UTC
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+      
+      - name: Run scraper
+        run: python scraper.py
+      
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'DigitFoxx Bot'
+          git config --global user.email 'bot@digitfoxx.com'
+          git add results.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update UK49s - $(date -u +'%Y-%m-%d %H:%M UTC') - DigitFoxx.com" && git push)
