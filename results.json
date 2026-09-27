@@ -71,21 +71,21 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-09-27T14:31:23.968889Z",
+    "updatedAt": "2026-09-27T18:59:50.804723Z",
     "live": true
   },
   {
     "slug": "uk49s-teatime",
     "name": "UK49s Teatime",
     "numbers": [
-      9,
-      11,
-      12,
-      29,
-      34,
+      14,
+      23,
+      32,
+      38,
+      39,
       40
     ],
-    "bonus": 37,
+    "bonus": 19,
     "date": "2026-09-27",
     "dateLong": "27 September 2026",
     "history": [
@@ -146,7 +146,7 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-09-27T14:31:24.486650Z",
+    "updatedAt": "2026-09-27T18:59:51.314515Z",
     "live": true
   },
   {
@@ -221,21 +221,21 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-09-27T14:31:25.064331Z",
+    "updatedAt": "2026-09-27T18:59:51.898173Z",
     "live": true
   },
   {
     "slug": "uk49s-drivetime",
     "name": "UK49s Drivetime",
     "numbers": [
-      9,
-      27,
-      31,
-      39,
-      42,
-      47
+      7,
+      13,
+      17,
+      25,
+      28,
+      43
     ],
-    "bonus": 49,
+    "bonus": 32,
     "date": "2026-09-27",
     "dateLong": "27 September 2026",
     "history": [
@@ -296,7 +296,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-09-27T14:31:25.561563Z",
+    "updatedAt": "2026-09-27T18:59:52.402864Z",
     "live": true
   },
   {
