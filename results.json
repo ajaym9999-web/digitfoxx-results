@@ -85,24 +85,38 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-09-28T15:30:51.043915Z",
+    "updatedAt": "2026-09-28T18:25:09.696603Z",
     "live": true
   },
   {
     "slug": "uk49s-teatime",
     "name": "UK49s Teatime",
     "numbers": [
-      14,
-      23,
-      32,
+      4,
+      25,
+      26,
+      31,
       38,
-      39,
-      40
+      46
     ],
-    "bonus": 19,
-    "date": "2026-09-27",
-    "dateLong": "27 September 2026",
+    "bonus": 8,
+    "date": "2026-09-28",
+    "dateLong": "28 September 2026",
     "history": [
+      {
+        "no": 2485,
+        "date": "2026-09-28",
+        "dateLong": "28 September 2026",
+        "numbers": [
+          4,
+          25,
+          26,
+          31,
+          38,
+          46
+        ],
+        "bonus": 8
+      },
       {
         "no": 2484,
         "date": "2026-09-27",
@@ -160,7 +174,7 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-09-28T15:30:51.043934Z",
+    "updatedAt": "2026-09-28T18:25:09.696644Z",
     "live": true
   },
   {
@@ -249,24 +263,38 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-09-28T15:30:51.043954Z",
+    "updatedAt": "2026-09-28T18:25:09.696659Z",
     "live": true
   },
   {
     "slug": "uk49s-drivetime",
     "name": "UK49s Drivetime",
     "numbers": [
-      7,
-      13,
-      17,
-      25,
-      28,
-      43
+      8,
+      14,
+      38,
+      45,
+      47,
+      48
     ],
-    "bonus": 32,
-    "date": "2026-09-27",
-    "dateLong": "27 September 2026",
+    "bonus": 1,
+    "date": "2026-09-28",
+    "dateLong": "28 September 2026",
     "history": [
+      {
+        "no": 2485,
+        "date": "2026-09-28",
+        "dateLong": "28 September 2026",
+        "numbers": [
+          8,
+          14,
+          38,
+          45,
+          47,
+          48
+        ],
+        "bonus": 1
+      },
       {
         "no": 2484,
         "date": "2026-09-27",
@@ -324,7 +352,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-09-28T15:30:51.043965Z",
+    "updatedAt": "2026-09-28T18:25:09.696684Z",
     "live": true
   },
   {
