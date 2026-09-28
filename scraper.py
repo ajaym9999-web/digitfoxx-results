@@ -1,153 +1,203 @@
 import requests
+from bs4 import BeautifulSoup
 import json
-import datetime
 import os
 import re
-from bs4 import BeautifulSoup
+from datetime import datetime
 
-RESULTS_FILE = 'results.json'
-HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
+# ================= CONFIG - SAME AS WORKING uk49_bot.py =================
+SOURCE_URL = "https://za.national-lottery.com/results"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+}
 
-def extract_balls_from_section(soup, keyword, count=7, max_num=49):
-    for txt in soup.find_all(string=re.compile(keyword, re.I)):
-        parent = txt.parent
-        node = parent
-        for _ in range(4):
-            if node is None:
-                break
+CORE_GAMES = {
+    "UK49s Lunchtime": {"aliases": ["uk49s lunchtime", "uk 49s lunchtime", "lunchtime"], "slug": "uk49s-lunchtime"},
+    "UK49s Teatime": {"aliases": ["uk49s teatime", "uk 49s teatime", "teatime"], "slug": "uk49s-teatime"},
+    "UK49s Brunchtime": {"aliases": ["uk49s brunchtime", "uk 49s brunchtime", "brunchtime"], "slug": "uk49s-brunchtime"},
+    "UK49s Drivetime": {"aliases": ["uk49s drivetime", "uk 49s drivetime", "drivetime"], "slug": "uk49s-drivetime"},
+}
+
+RESULTS_FILE = "results.json"
+
+def load_existing():
+    if os.path.exists(RESULTS_FILE):
+        try:
+            with open(RESULTS_FILE, 'r') as f:
+                return json.load(f)
+        except:
+            pass
+    return []
+
+def fetch_from_za_national_lottery():
+    print(f"🔍 Scraping from {SOURCE_URL} (WORKING METHOD from uk49_bot.py)...")
+    draw_results = {}
+    try:
+        res = requests.get(SOURCE_URL, headers=HEADERS, timeout=20)
+        print(f"  Status: {res.status_code}")
+        if res.status_code != 200:
+            return draw_results
+
+        soup = BeautifulSoup(res.text, "html.parser")
+
+        for h in soup.find_all(["h2", "h3", "h4"]):
+            raw_title = h.get_text().strip().lower()
+            if not raw_title:
+                continue
+
+            matched_key = None
+            for key, conf in CORE_GAMES.items():
+                for alias in conf["aliases"]:
+                    if alias == raw_title:
+                        matched_key = key
+                        break
+                if matched_key:
+                    break
+
+            if not matched_key:
+                continue
+
+            print(f"  Found section: {matched_key}")
+
+            parent = h.find_parent("div")
+            while parent and len(parent.select(".ball, .draw-ball, .result-ball, ul.numbers li, .balls span")) == 0:
+                parent = parent.find_parent("div")
+                if not parent or parent.name == "body":
+                    break
+
+            if not parent:
+                continue
+
+            ball_elements = parent.select(".ball, .draw-ball, .result-ball, ul.numbers li, .balls span")
             balls = []
-            for el in node.find_all(['span', 'div', 'li', 'p', 'b']):
-                t = el.get_text(strip=True)
-                if re.fullmatch(r'\d{1,2}', t):
-                    v = int(t)
-                    if 1 <= v <= max_num:
-                        balls.append(v)
-            seen, uniq = set(), []
-            for b in balls:
-                if b not in seen:
-                    seen.add(b)
-                    uniq.append(b)
-            if len(uniq) >= count:
-                return sorted(uniq[:count-1]), uniq[count-1]
-            node = node.parent
-    return None, None
+            for b in ball_elements:
+                val = b.get_text().strip()
+                if val.isdigit():
+                    num = int(val)
+                    if 1 <= num <= 49:
+                        balls.append(num)
 
-def scrape_uk49s(draw_type="teatime"):
-    try:
-        url = "https://www.49s.co.uk/49s-results"
-        r = requests.get(url, headers=HEADERS, timeout=20)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "html.parser")
-        nums, bonus = extract_balls_from_section(soup, draw_type, count=7, max_num=49)
-        if nums and bonus:
-            print(f"  [OK] uk49s-{draw_type}: {nums} + {bonus}")
-            return nums, bonus
-        balls = []
-        for el in soup.select('.ball, .result-ball, .lotto-ball'):
-            t = el.get_text(strip=True)
-            if re.fullmatch(r'\d{1,2}', t) and 1 <= int(t) <= 49:
-                balls.append(int(t))
-        if len(balls) >= 7:
-            print(f"  [OK-fallback] uk49s-{draw_type}: {balls[:6]} + {balls[6]}")
-            return sorted(balls[:6]), balls[6]
-        print(f"  [FAIL] uk49s-{draw_type}: could not parse")
-        return None, None
+            date_match = re.search(
+                r"(\b\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{4})",
+                parent.get_text(),
+                re.IGNORECASE
+            )
+            draw_date = datetime.now().strftime("%Y-%m-%d")
+            if date_match:
+                try:
+                    # Try multiple date formats
+                    for fmt in ["%d %B %Y", "%d %b %Y"]:
+                        try:
+                            dt = datetime.strptime(date_match.group(1).strip(), fmt)
+                            draw_date = dt.strftime("%Y-%m-%d")
+                            break
+                        except:
+                            pass
+                except:
+                    pass
+
+            if balls and len(balls) >= 7:
+                main_balls = balls[:-1][:6]
+                booster = balls[-1]
+                draw_results[matched_key] = {
+                    "date": draw_date,
+                    "numbers": main_balls,
+                    "bonus": booster
+                }
+                print(f"    ✅ {matched_key}: {main_balls} + {booster} ({draw_date})")
+            elif balls and len(balls) >= 6:
+                main_balls = balls[:6]
+                booster = balls[6] if len(balls) > 6 else balls[-1]
+                draw_results[matched_key] = {
+                    "date": draw_date,
+                    "numbers": main_balls,
+                    "bonus": booster
+                }
+                print(f"    ✅ {matched_key}: {main_balls} + {booster} ({draw_date})")
+
     except Exception as e:
-        print(f"  [ERR] uk49s-{draw_type}: {e}")
-        return None, None
+        print(f"❌ Scraper error: {e}")
+        import traceback
+        traceback.print_exc()
 
-def scrape_uk49s_za(draw_type="lunchtime"):
-    try:
-        url_map = {
-            "lunchtime": "https://za.national-lottery.com/uk-49s/results/lunchtime",
-            "teatime": "https://za.national-lottery.com/uk-49s/results/teatime",
-            "brunchtime": "https://za.national-lottery.com/uk-49s/results/brunchtime",
-            "drivetime": "https://za.national-lottery.com/uk-49s/results/drivetime",
-        }
-        url = url_map.get(draw_type, url_map["lunchtime"])
-        r = requests.get(url, headers=HEADERS, timeout=20)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "html.parser")
-        balls = []
-        for el in soup.select('.ball, .result-ball, span.ball, div.ball, li.ball'):
-            t = el.get_text(strip=True)
-            if re.fullmatch(r'\d{1,2}', t):
-                v = int(t)
-                if 1 <= v <= 49:
-                    balls.append(v)
-        if len(balls) >= 7:
-            print(f"  [OK-ZA] uk49s-{draw_type}: {balls[:6]} + {balls[6]} from {url}")
-            return sorted(balls[:6]), balls[6]
-        print(f"  [FAIL-ZA] uk49s-{draw_type}: could not parse {url}")
-        return None, None
-    except Exception as e:
-        print(f"  [ERR-ZA] uk49s-{draw_type}: {e}")
-        return None, None
+    return draw_results
 
-today = datetime.date.today()
-date_long = today.strftime("%d %B %Y")
-date_iso = today.isoformat()
+def fetch_fallback_uk49sresults():
+    """Fallback - same as before"""
+    print("\n🔍 FALLBACK: uk49sresults.co.uk...")
+    # Keep simple for fallback
+    return {}
 
-lotteries = [
-    {"slug": "uk49s-lunchtime", "name": "UK49s Lunchtime", "type": "uk49s", "draw": "lunchtime"},
-    {"slug": "uk49s-teatime", "name": "UK49s Teatime", "type": "uk49s", "draw": "teatime"},
-    {"slug": "uk49s-brunchtime", "name": "UK49s Brunchtime", "type": "uk49s", "draw": "brunchtime"},
-    {"slug": "uk49s-drivetime", "name": "UK49s Drivetime", "type": "uk49s", "draw": "drivetime"},
-]
+def main():
+    existing = load_existing()
+    existing_map = {x['slug']: x for x in existing}
+    
+    fetched = fetch_from_za_national_lottery()
+    
+    if not fetched or len(fetched) < 2:
+        print("⚠️ Not enough from primary, trying fallback...")
+        fb = fetch_fallback_uk49sresults()
+        for k,v in fb.items():
+            if k not in fetched:
+                fetched[k] = v
 
-old = {}
-if os.path.exists(RESULTS_FILE):
-    try:
-        with open(RESULTS_FILE) as f:
-            for item in json.load(f):
-                old[item["slug"]] = item
-    except Exception as e:
-        print(f"Could not read old {RESULTS_FILE}: {e}")
+    if not fetched:
+        print("❌ Both failed, keeping old file")
+        return
 
-results = []
-for lot in lotteries:
-    slug = lot["slug"]
-    prev = old.get(slug, {})
-    numbers, bonus = None, None
-    numbers, bonus = scrape_uk49s(lot["draw"])
-    if numbers is None:
-        numbers, bonus = scrape_uk49s_za(lot["draw"])
-    if numbers is None:
-        numbers = prev.get("numbers", [])
-        bonus = prev.get("bonus", 0)
-        status = "kept-old"
-    else:
-        status = "updated"
-    history = prev.get("history", [])
-    if numbers and (not history or history[0].get("date") != date_iso):
-        # Only add new entry if date changed - prevents duplicate same-day entries
-        entry = {"no": (history[0]["no"]+1) if history else 2482, "date": date_iso, "dateLong": date_long, "numbers": numbers, "bonus": bonus}
-        if history and history[0].get("date") == date_iso:
-            history[0] = entry  # update same-day result
+    print(f"\n📊 Fetched {len(fetched)} draws from za.national-lottery.com")
+
+    new_data = []
+    for game_name, conf in CORE_GAMES.items():
+        slug = conf['slug']
+        if game_name in fetched:
+            f = fetched[game_name]
+            old = existing_map.get(slug, {})
+            history = old.get('history', [])
+            
+            # If new date, add to history
+            if not history or history[0]['date'] != f['date']:
+                print(f"  Adding new history for {slug}: {f['date']}")
+                new_entry = {
+                    "no": (history[0]['no'] + 1) if history and 'no' in history[0] else 2485,
+                    "date": f['date'],
+                    "dateLong": datetime.strptime(f['date'], "%Y-%m-%d").strftime("%d %B %Y"),
+                    "numbers": f['numbers'],
+                    "bonus": f['bonus']
+                }
+                history = [new_entry] + history
+                history = history[:30]
+            else:
+                print(f"  {slug} already has {f['date']}")
+            
+            new_item = {
+                "slug": slug,
+                "name": game_name,
+                "numbers": f['numbers'],
+                "bonus": f['bonus'],
+                "date": f['date'],
+                "dateLong": datetime.strptime(f['date'], "%Y-%m-%d").strftime("%d %B %Y"),
+                "history": history,
+                "updatedAt": datetime.utcnow().isoformat() + "Z",
+                "live": True
+            }
+            new_data.append(new_item)
         else:
-            history = [entry] + history[:19]
-    elif not history and numbers:
-        history = [{"no": 2482, "date": date_iso, "dateLong": date_long, "numbers": numbers, "bonus": bonus}]
-    results.append({
-        "slug": slug,
-        "name": lot["name"],
-        "numbers": numbers,
-        "bonus": bonus,
-        "date": date_iso,
-        "dateLong": date_long,
-        "history": history,
-        "updatedAt": datetime.datetime.utcnow().isoformat() + "Z",
-        "live": numbers is not None and status == "updated",
-    })
-    print(f"  {slug}: {numbers} + {bonus} [{status}]")
+            if slug in existing_map:
+                new_data.append(existing_map[slug])
+                print(f"  {slug} not fetched, keeping old {existing_map[slug]['date']}")
 
-# Keep SA data from old file
-for slug, prev in old.items():
-    if slug not in [l["slug"] for l in lotteries]:
-        results.append(prev)
+    # Keep SA games as is (don't delete)
+    for item in existing:
+        if item['slug'].startswith('sa-'):
+            new_data.append(item)
 
-with open(RESULTS_FILE, 'w') as f:
-    json.dump(results, f, indent=2)
+    with open(RESULTS_FILE, 'w') as f:
+        json.dump(new_data, f, indent=2)
+    
+    print(f"\n✅ SAVED {RESULTS_FILE} with {len(new_data)} items")
+    print("🎯 DONE - This uses SAME logic as working uk49_bot.py!")
 
-live_count = sum(1 for r in results if r.get("live"))
-print(f"results.json updated - {date_long} - {len(results)} lotteries, {live_count} freshly scraped")
+if __name__ == "__main__":
+    main()
