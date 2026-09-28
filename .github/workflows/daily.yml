@@ -1,39 +1,62 @@
-name: Daily UK49s Results Update - DigitFoxx.com
+name: Daily UK49s Results Update - Timetable Based
 
 on:
   schedule:
-    # Har 30 min pe - SAME AS WORKING uk49.vedicvibe.online
-    - cron: '*/30 * * * *'
+    # ================= BRUNCHTIME =================
+    # 10:49 AM UK = 3:19 PM IST = 09:49 UTC
+    # Hit: 3:25, 3:35, 3:45, 3:55 PM IST (10 min gap)
+    - cron: '55 9 * * *'   # 3:25 PM IST
+    - cron: '5 10 * * *'   # 3:35 PM IST
+    - cron: '15 10 * * *'  # 3:45 PM IST
+    - cron: '25 10 * * *'  # 3:55 PM IST
+
+    # ================= LUNCHTIME =================
+    # 12:49 PM UK = 5:19 PM IST = 11:49 UTC
+    # Hit: 5:25, 5:35, 5:45, 5:55 PM IST
+    - cron: '55 11 * * *'  # 5:25 PM IST
+    - cron: '5 12 * * *'   # 5:35 PM IST
+    - cron: '15 12 * * *'  # 5:45 PM IST
+    - cron: '25 12 * * *'  # 5:55 PM IST
+
+    # ================= DRIVETIME =================
+    # 3:49 PM UK = 8:19 PM IST = 14:49 UTC
+    # Hit: 8:25, 8:35, 8:45, 8:55 PM IST
+    - cron: '55 14 * * *'  # 8:25 PM IST
+    - cron: '5 15 * * *'   # 8:35 PM IST
+    - cron: '15 15 * * *'  # 8:45 PM IST
+    - cron: '25 15 * * *'  # 8:55 PM IST
+
+    # ================= TEATIME =================
+    # 5:49 PM UK = 10:19 PM IST = 16:49 UTC
+    # Hit: 10:25, 10:35, 10:45, 10:55 PM IST
+    - cron: '55 16 * * *'  # 10:25 PM IST
+    - cron: '5 17 * * *'   # 10:35 PM IST
+    - cron: '15 17 * * *'  # 10:45 PM IST
+    - cron: '25 17 * * *'  # 10:55 PM IST
+
   workflow_dispatch:
 
 jobs:
   update-results:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v3
+      
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-
-      - name: Install deps
+          python-version: '3.10'
+          
+      - name: Install dependencies
         run: pip install requests beautifulsoup4
-
-      - name: Run scraper (za.national-lottery.com FIRST - same as uk49 bot)
+        
+      - name: Run scraper (UK49 BOT SAME LOGIC)
         run: python scraper.py
-
+        
       - name: Commit and push results.json
         run: |
-          git config user.name "DigitFoxx Bot"
-          git config user.email "bot@digitfoxx.com"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add results.json
-          git diff --staged --quiet || git commit -m "Auto update UK49s results $(date -u +'%Y-%m-%d %H:%M UTC') - from za.national-lottery.com"
+          git diff --staged --quiet || git commit -m "Update UK49s - $(date -u '+%d %b %Y %H:%M UTC')"
           git push
-
-      - name: Trigger Pages rebuild
-        run: |
-          echo "Results updated at $(date)"
