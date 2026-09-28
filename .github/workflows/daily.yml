@@ -2,19 +2,8 @@ name: Daily UK49s Results Update - DigitFoxx.com
 
 on:
   schedule:
-    # Brunchtime 10:49 AM UK = 11:20 AM UK run
-    - cron: '20 10 * * *'
-    - cron: '20 11 * * *'
-    # Lunchtime 12:49 PM UK = 1:20 PM UK run
-    - cron: '20 12 * * *'
-    - cron: '20 13 * * *'
-    # Drivetime 3:49 PM UK = 4:20 PM UK run
-    - cron: '20 15 * * *'
-    - cron: '20 16 * * *'
-    # Teatime 5:49 PM UK = 6:20 PM UK run (sabse important)
-    - cron: '20 17 * * *'
-    - cron: '20 18 * * *'
-
+    # Har 30 min pe - SAME AS WORKING uk49.vedicvibe.online
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,9 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -32,28 +20,20 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4 lxml
+      - name: Install deps
+        run: pip install requests beautifulsoup4
 
-      - name: Run UK49s scraper
-        run: |
-          python scraper.py
+      - name: Run scraper (za.national-lottery.com FIRST - same as uk49 bot)
+        run: python scraper.py
 
-      - name: Check if results.json changed
-        id: check_changes
+      - name: Commit and push results.json
         run: |
-          if [[ -n $(git status --porcelain results.json) ]]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit and push if changed
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          git config --global user.name 'DigitFoxx Bot'
-          git config --global user.email 'bot@digitfoxx.com'
+          git config user.name "DigitFoxx Bot"
+          git config user.email "bot@digitfoxx.com"
           git add results.json
-          git commit -m "Auto update - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "Auto update UK49s results $(date -u +'%Y-%m-%d %H:%M UTC') - from za.national-lottery.com"
           git push
+
+      - name: Trigger Pages rebuild
+        run: |
+          echo "Results updated at $(date)"
