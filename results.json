@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      7,
-      17,
-      22,
-      24,
-      34,
-      39
+      8,
+      9,
+      15,
+      18,
+      20,
+      35
     ],
-    "bonus": 11,
-    "date": "2026-09-29",
-    "dateLong": "29 September 2026",
+    "bonus": 16,
+    "date": "2026-09-28",
+    "dateLong": "28 September 2026",
     "history": [
+      {
+        "no": 2488,
+        "date": "2026-09-28",
+        "dateLong": "28 September 2026",
+        "numbers": [
+          8,
+          9,
+          15,
+          18,
+          20,
+          35
+        ],
+        "bonus": 16
+      },
       {
         "no": 2487,
         "date": "2026-09-29",
@@ -99,7 +113,7 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-09-29T17:03:16.929780Z",
+    "updatedAt": "2026-09-29T18:02:02.930986Z",
     "live": true
   },
   {
@@ -209,17 +223,31 @@
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
-      10,
-      21,
-      27,
-      32,
+      12,
+      14,
+      16,
       33,
-      34
+      39,
+      42
     ],
-    "bonus": 24,
-    "date": "2026-09-29",
-    "dateLong": "29 September 2026",
+    "bonus": 15,
+    "date": "2026-09-28",
+    "dateLong": "28 September 2026",
     "history": [
+      {
+        "no": 2487,
+        "date": "2026-09-28",
+        "dateLong": "28 September 2026",
+        "numbers": [
+          12,
+          14,
+          16,
+          33,
+          39,
+          42
+        ],
+        "bonus": 15
+      },
       {
         "no": 2486,
         "date": "2026-09-29",
@@ -305,7 +333,7 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-09-29T17:03:16.929834Z",
+    "updatedAt": "2026-09-29T18:02:02.931023Z",
     "live": true
   },
   {
