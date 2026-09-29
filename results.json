@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      8,
-      9,
-      15,
-      18,
-      20,
-      35
+      7,
+      17,
+      22,
+      24,
+      34,
+      39
     ],
-    "bonus": 16,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 11,
+    "date": "2026-09-29",
+    "dateLong": "29 September 2026",
     "history": [
+      {
+        "no": 2487,
+        "date": "2026-09-29",
+        "dateLong": "29 September 2026",
+        "numbers": [
+          7,
+          17,
+          22,
+          24,
+          34,
+          39
+        ],
+        "bonus": 11
+      },
       {
         "no": 2486,
         "date": "2026-09-28",
@@ -85,7 +99,7 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-09-28T18:25:09.696603Z",
+    "updatedAt": "2026-09-29T16:09:57.801891Z",
     "live": true
   },
   {
@@ -174,24 +188,38 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-09-28T18:25:09.696644Z",
+    "updatedAt": "2026-09-29T16:09:57.801909Z",
     "live": true
   },
   {
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
-      3,
-      4,
-      16,
-      25,
-      38,
-      49
+      10,
+      21,
+      27,
+      32,
+      33,
+      34
     ],
-    "bonus": 26,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 24,
+    "date": "2026-09-29",
+    "dateLong": "29 September 2026",
     "history": [
+      {
+        "no": 2486,
+        "date": "2026-09-29",
+        "dateLong": "29 September 2026",
+        "numbers": [
+          10,
+          21,
+          27,
+          32,
+          33,
+          34
+        ],
+        "bonus": 24
+      },
       {
         "no": 2485,
         "date": "2026-09-28",
@@ -263,7 +291,7 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-09-28T18:25:09.696659Z",
+    "updatedAt": "2026-09-29T16:09:57.801927Z",
     "live": true
   },
   {
@@ -271,16 +299,30 @@
     "name": "UK49s Drivetime",
     "numbers": [
       8,
-      14,
-      38,
-      45,
-      47,
+      10,
+      12,
+      40,
+      44,
       48
     ],
-    "bonus": 1,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 13,
+    "date": "2026-09-29",
+    "dateLong": "29 September 2026",
     "history": [
+      {
+        "no": 2486,
+        "date": "2026-09-29",
+        "dateLong": "29 September 2026",
+        "numbers": [
+          8,
+          10,
+          12,
+          40,
+          44,
+          48
+        ],
+        "bonus": 13
+      },
       {
         "no": 2485,
         "date": "2026-09-28",
@@ -352,7 +394,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-09-28T18:25:09.696684Z",
+    "updatedAt": "2026-09-29T16:09:57.801944Z",
     "live": true
   },
   {
