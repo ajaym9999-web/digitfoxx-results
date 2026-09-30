@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      7,
-      17,
-      22,
-      24,
-      34,
-      39
+      3,
+      11,
+      14,
+      25,
+      38,
+      48
     ],
-    "bonus": 11,
-    "date": "2026-09-29",
-    "dateLong": "29 September 2026",
+    "bonus": 7,
+    "date": "2026-09-30",
+    "dateLong": "30 September 2026",
     "history": [
+      {
+        "no": 2494,
+        "date": "2026-09-30",
+        "dateLong": "30 September 2026",
+        "numbers": [
+          3,
+          11,
+          14,
+          25,
+          38,
+          48
+        ],
+        "bonus": 7
+      },
       {
         "no": 2493,
         "date": "2026-09-29",
@@ -183,7 +197,7 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-09-29T21:27:18.719369Z",
+    "updatedAt": "2026-09-30T16:07:06.108057Z",
     "live": true
   },
   {
@@ -286,24 +300,38 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-09-29T21:27:18.719400Z",
+    "updatedAt": "2026-09-30T16:07:06.108078Z",
     "live": true
   },
   {
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
-      10,
-      21,
+      7,
+      9,
+      19,
+      23,
       27,
-      32,
-      33,
-      34
+      43
     ],
-    "bonus": 24,
-    "date": "2026-09-29",
-    "dateLong": "29 September 2026",
+    "bonus": 2,
+    "date": "2026-09-30",
+    "dateLong": "30 September 2026",
     "history": [
+      {
+        "no": 2493,
+        "date": "2026-09-30",
+        "dateLong": "30 September 2026",
+        "numbers": [
+          7,
+          9,
+          19,
+          23,
+          27,
+          43
+        ],
+        "bonus": 2
+      },
       {
         "no": 2492,
         "date": "2026-09-29",
@@ -473,24 +501,38 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-09-29T21:27:18.719415Z",
+    "updatedAt": "2026-09-30T16:07:06.108100Z",
     "live": true
   },
   {
     "slug": "uk49s-drivetime",
     "name": "UK49s Drivetime",
     "numbers": [
-      8,
-      10,
-      12,
-      40,
-      44,
-      48
+      4,
+      13,
+      17,
+      26,
+      39,
+      47
     ],
-    "bonus": 13,
-    "date": "2026-09-29",
-    "dateLong": "29 September 2026",
+    "bonus": 6,
+    "date": "2026-09-30",
+    "dateLong": "30 September 2026",
     "history": [
+      {
+        "no": 2487,
+        "date": "2026-09-30",
+        "dateLong": "30 September 2026",
+        "numbers": [
+          4,
+          13,
+          17,
+          26,
+          39,
+          47
+        ],
+        "bonus": 6
+      },
       {
         "no": 2486,
         "date": "2026-09-29",
@@ -576,7 +618,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-09-29T21:27:18.719429Z",
+    "updatedAt": "2026-09-30T16:07:06.108120Z",
     "live": true
   },
   {
