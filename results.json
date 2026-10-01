@@ -309,24 +309,38 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-10-01T17:04:38.505952Z",
+    "updatedAt": "2026-10-01T17:30:34.376878Z",
     "live": true
   },
   {
     "slug": "uk49s-teatime",
     "name": "UK49s Teatime",
     "numbers": [
-      1,
-      7,
-      14,
-      19,
-      27,
-      44
+      6,
+      12,
+      16,
+      29,
+      37,
+      45
     ],
-    "bonus": 37,
-    "date": "2026-09-30",
-    "dateLong": "30 September 2026",
+    "bonus": 49,
+    "date": "2026-10-01",
+    "dateLong": "01 October 2026",
     "history": [
+      {
+        "no": 2488,
+        "date": "2026-10-01",
+        "dateLong": "01 October 2026",
+        "numbers": [
+          6,
+          12,
+          16,
+          29,
+          37,
+          45
+        ],
+        "bonus": 49
+      },
       {
         "no": 2487,
         "date": "2026-09-30",
@@ -426,7 +440,7 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-01T17:04:38.505974Z",
+    "updatedAt": "2026-10-01T17:30:34.376919Z",
     "live": true
   },
   {
@@ -739,7 +753,7 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-10-01T17:04:38.506001Z",
+    "updatedAt": "2026-10-01T17:30:34.376934Z",
     "live": true
   },
   {
@@ -870,7 +884,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-10-01T17:04:38.506014Z",
+    "updatedAt": "2026-10-01T17:30:34.376948Z",
     "live": true
   },
   {
