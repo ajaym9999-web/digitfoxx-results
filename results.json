@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      8,
-      9,
-      15,
-      18,
-      20,
-      35
+      7,
+      10,
+      16,
+      40,
+      47,
+      48
     ],
-    "bonus": 16,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 19,
+    "date": "2026-10-02",
+    "dateLong": "02 October 2026",
     "history": [
+      {
+        "no": 2508,
+        "date": "2026-10-02",
+        "dateLong": "02 October 2026",
+        "numbers": [
+          7,
+          10,
+          16,
+          40,
+          47,
+          48
+        ],
+        "bonus": 19
+      },
       {
         "no": 2507,
         "date": "2026-09-28",
@@ -379,7 +393,7 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-10-02T15:59:05.957844Z",
+    "updatedAt": "2026-10-02T16:12:46.803429Z",
     "live": true
   },
   {
@@ -510,24 +524,38 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-01T21:52:51.435771Z",
+    "updatedAt": "2026-10-02T16:12:46.803449Z",
     "live": true
   },
   {
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
-      12,
-      14,
+      11,
       16,
+      19,
+      23,
       33,
-      39,
-      42
+      34
     ],
-    "bonus": 15,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 8,
+    "date": "2026-10-02",
+    "dateLong": "02 October 2026",
     "history": [
+      {
+        "no": 2507,
+        "date": "2026-10-02",
+        "dateLong": "02 October 2026",
+        "numbers": [
+          11,
+          16,
+          19,
+          23,
+          33,
+          34
+        ],
+        "bonus": 8
+      },
       {
         "no": 2506,
         "date": "2026-09-28",
@@ -893,24 +921,38 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-10-02T15:59:05.957878Z",
+    "updatedAt": "2026-10-02T16:12:46.803468Z",
     "live": true
   },
   {
     "slug": "uk49s-drivetime",
     "name": "UK49s Drivetime",
     "numbers": [
-      4,
-      10,
+      6,
       12,
-      13,
-      17,
-      20
+      18,
+      26,
+      29,
+      41
     ],
-    "bonus": 16,
-    "date": "2026-10-01",
-    "dateLong": "01 October 2026",
+    "bonus": 25,
+    "date": "2026-10-02",
+    "dateLong": "02 October 2026",
     "history": [
+      {
+        "no": 2489,
+        "date": "2026-10-02",
+        "dateLong": "02 October 2026",
+        "numbers": [
+          6,
+          12,
+          18,
+          26,
+          29,
+          41
+        ],
+        "bonus": 25
+      },
       {
         "no": 2488,
         "date": "2026-10-01",
@@ -1024,7 +1066,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-10-01T21:52:51.435798Z",
+    "updatedAt": "2026-10-02T16:12:46.803484Z",
     "live": true
   },
   {
