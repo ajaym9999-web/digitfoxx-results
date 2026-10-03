@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      8,
-      9,
-      15,
-      18,
+      5,
+      11,
       20,
-      35
+      27,
+      42,
+      47
     ],
-    "bonus": 16,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 31,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2513,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          5,
+          11,
+          20,
+          27,
+          42,
+          47
+        ],
+        "bonus": 31
+      },
       {
         "no": 2512,
         "date": "2026-09-28",
@@ -419,40 +433,40 @@
           42
         ],
         "bonus": 13
-      },
-      {
-        "no": 2483,
-        "date": "2026-09-25",
-        "dateLong": "25 September 2026",
-        "numbers": [
-          16,
-          19,
-          20,
-          25,
-          28,
-          30
-        ],
-        "bonus": 29
       }
     ],
-    "updatedAt": "2026-10-03T18:27:51.289433Z",
+    "updatedAt": "2026-10-03T18:39:29.420776Z",
     "live": true
   },
   {
     "slug": "uk49s-teatime",
     "name": "UK49s Teatime",
     "numbers": [
-      5,
-      6,
+      8,
       14,
-      33,
-      47,
-      49
+      16,
+      25,
+      36,
+      43
     ],
-    "bonus": 19,
-    "date": "2026-10-02",
-    "dateLong": "02 October 2026",
+    "bonus": 35,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2490,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          8,
+          14,
+          16,
+          25,
+          36,
+          43
+        ],
+        "bonus": 35
+      },
       {
         "no": 2489,
         "date": "2026-10-02",
@@ -580,24 +594,38 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-03T16:20:30.369150Z",
+    "updatedAt": "2026-10-03T18:39:29.420811Z",
     "live": true
   },
   {
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
+      7,
       12,
-      14,
-      16,
-      33,
-      39,
-      42
+      45,
+      46,
+      48,
+      49
     ],
-    "bonus": 15,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 47,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2512,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          7,
+          12,
+          45,
+          46,
+          48,
+          49
+        ],
+        "bonus": 47
+      },
       {
         "no": 2511,
         "date": "2026-09-28",
@@ -1003,23 +1031,9 @@
           49
         ],
         "bonus": 31
-      },
-      {
-        "no": 2482,
-        "date": "2026-09-25",
-        "dateLong": "25 September 2026",
-        "numbers": [
-          8,
-          13,
-          33,
-          37,
-          38,
-          44
-        ],
-        "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-03T18:27:51.289462Z",
+    "updatedAt": "2026-10-03T18:39:29.420835Z",
     "live": true
   },
   {
@@ -1178,7 +1192,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-10-03T16:20:30.369178Z",
+    "updatedAt": "2026-10-03T18:39:29.420847Z",
     "live": true
   },
   {
