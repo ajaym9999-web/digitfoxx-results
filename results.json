@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      8,
-      9,
-      15,
-      18,
+      5,
+      11,
       20,
-      35
+      27,
+      42,
+      47
     ],
-    "bonus": 16,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 31,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2515,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          5,
+          11,
+          20,
+          27,
+          42,
+          47
+        ],
+        "bonus": 31
+      },
       {
         "no": 2514,
         "date": "2026-09-28",
@@ -419,23 +433,9 @@
           35
         ],
         "bonus": 16
-      },
-      {
-        "no": 2485,
-        "date": "2026-09-27",
-        "dateLong": "27 September 2026",
-        "numbers": [
-          3,
-          9,
-          10,
-          29,
-          41,
-          43
-        ],
-        "bonus": 34
       }
     ],
-    "updatedAt": "2026-10-03T18:45:15.984730Z",
+    "updatedAt": "2026-10-03T19:31:33.199500Z",
     "live": true
   },
   {
@@ -594,24 +594,38 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-03T18:40:14.060390Z",
+    "updatedAt": "2026-10-03T19:31:33.199518Z",
     "live": true
   },
   {
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
+      7,
       12,
-      14,
-      16,
-      33,
-      39,
-      42
+      45,
+      46,
+      48,
+      49
     ],
-    "bonus": 15,
-    "date": "2026-09-28",
-    "dateLong": "28 September 2026",
+    "bonus": 47,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2514,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          7,
+          12,
+          45,
+          46,
+          48,
+          49
+        ],
+        "bonus": 47
+      },
       {
         "no": 2513,
         "date": "2026-09-28",
@@ -1017,23 +1031,9 @@
           49
         ],
         "bonus": 26
-      },
-      {
-        "no": 2484,
-        "date": "2026-09-27",
-        "dateLong": "27 September 2026",
-        "numbers": [
-          12,
-          14,
-          16,
-          33,
-          39,
-          42
-        ],
-        "bonus": 15
       }
     ],
-    "updatedAt": "2026-10-03T18:45:15.984760Z",
+    "updatedAt": "2026-10-03T19:31:33.199536Z",
     "live": true
   },
   {
@@ -1192,7 +1192,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-10-03T18:40:14.060419Z",
+    "updatedAt": "2026-10-03T19:31:33.199546Z",
     "live": true
   },
   {
