@@ -3,17 +3,31 @@
     "slug": "uk49s-lunchtime",
     "name": "UK49s Lunchtime",
     "numbers": [
-      7,
-      10,
-      16,
-      40,
-      47,
-      48
+      5,
+      11,
+      20,
+      27,
+      42,
+      47
     ],
-    "bonus": 19,
-    "date": "2026-10-02",
-    "dateLong": "02 October 2026",
+    "bonus": 31,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2511,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          5,
+          11,
+          20,
+          27,
+          42,
+          47
+        ],
+        "bonus": 31
+      },
       {
         "no": 2510,
         "date": "2026-10-02",
@@ -421,7 +435,7 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-10-02T21:22:04.032983Z",
+    "updatedAt": "2026-10-03T14:26:19.863171Z",
     "live": true
   },
   {
@@ -566,24 +580,38 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-02T21:22:04.033010Z",
+    "updatedAt": "2026-10-03T14:26:19.863202Z",
     "live": true
   },
   {
     "slug": "uk49s-brunchtime",
     "name": "UK49s Brunchtime",
     "numbers": [
-      11,
-      16,
-      19,
-      23,
-      33,
-      34
+      7,
+      12,
+      45,
+      46,
+      48,
+      49
     ],
-    "bonus": 8,
-    "date": "2026-10-02",
-    "dateLong": "02 October 2026",
+    "bonus": 47,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2510,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          7,
+          12,
+          45,
+          46,
+          48,
+          49
+        ],
+        "bonus": 47
+      },
       {
         "no": 2509,
         "date": "2026-10-02",
@@ -991,7 +1019,7 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-10-02T21:22:04.033026Z",
+    "updatedAt": "2026-10-03T14:26:19.863227Z",
     "live": true
   },
   {
@@ -1136,7 +1164,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-10-02T21:22:04.033039Z",
+    "updatedAt": "2026-10-03T14:26:19.863239Z",
     "live": true
   },
   {
