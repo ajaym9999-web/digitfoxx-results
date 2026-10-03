@@ -435,7 +435,7 @@
         "bonus": 49
       }
     ],
-    "updatedAt": "2026-10-03T15:15:03.228449Z",
+    "updatedAt": "2026-10-03T16:08:33.840069Z",
     "live": true
   },
   {
@@ -580,7 +580,7 @@
         "bonus": 40
       }
     ],
-    "updatedAt": "2026-10-03T15:15:03.228472Z",
+    "updatedAt": "2026-10-03T16:08:33.840083Z",
     "live": true
   },
   {
@@ -1019,24 +1019,38 @@
         "bonus": 20
       }
     ],
-    "updatedAt": "2026-10-03T15:15:03.228485Z",
+    "updatedAt": "2026-10-03T16:08:33.840090Z",
     "live": true
   },
   {
     "slug": "uk49s-drivetime",
     "name": "UK49s Drivetime",
     "numbers": [
-      6,
-      12,
-      18,
-      26,
-      29,
-      41
+      1,
+      4,
+      21,
+      38,
+      39,
+      47
     ],
-    "bonus": 25,
-    "date": "2026-10-02",
-    "dateLong": "02 October 2026",
+    "bonus": 35,
+    "date": "2026-10-03",
+    "dateLong": "03 October 2026",
     "history": [
+      {
+        "no": 2490,
+        "date": "2026-10-03",
+        "dateLong": "03 October 2026",
+        "numbers": [
+          1,
+          4,
+          21,
+          38,
+          39,
+          47
+        ],
+        "bonus": 35
+      },
       {
         "no": 2489,
         "date": "2026-10-02",
@@ -1164,7 +1178,7 @@
         "bonus": 9
       }
     ],
-    "updatedAt": "2026-10-03T15:15:03.228497Z",
+    "updatedAt": "2026-10-03T16:08:33.840102Z",
     "live": true
   },
   {
